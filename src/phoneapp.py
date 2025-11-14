@@ -57,8 +57,8 @@ def index():
         caller_id = request.form["callerId"]
         timeout = int(request.form["timeout"])
         result = make_call(connect_to, call_to, caller_id, timeout)
-        return render_template("phoneapp.html", result=result)
-    return render_template("phoneapp.html", result=None)
+        return render_template("phoneapp_new.html", result=result)
+return render_template("phoneapp_new.html", result=None)
 
 if __name__ == "__main__":
     app.run(debug=True)
