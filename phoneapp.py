@@ -10,7 +10,6 @@ load_dotenv()
 
 app = Flask(__name__, template_folder="templates")
 
-
 API_USERNAME = os.getenv("API_USERNAME")
 API_PASSWORD = os.getenv("API_PASSWORD")
 
@@ -58,7 +57,8 @@ def index():
         timeout = int(request.form["timeout"])
         result = make_call(connect_to, call_to, caller_id, timeout)
         return render_template("phoneapp_new.html", result=result)
-return render_template("phoneapp_new.html", result=None)
+    
+    return render_template("phoneapp_new.html", result=None)
 
 if __name__ == "__main__":
     app.run(debug=True)
