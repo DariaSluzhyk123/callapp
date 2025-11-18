@@ -37,7 +37,7 @@
       box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       width: 100%;
-      max-width: 850px; /* SZERSZE OKNO */
+      max-width: 850px;
     }
 
     .card:hover {
@@ -183,6 +183,12 @@
       }
 
       loading.style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("callForm").reset();
+        loading.style.display = "none";
+      }, 2000);
+
       return true;
     }
   </script>
