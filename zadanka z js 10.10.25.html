@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zadanka z JS</title>
+  <style>
+    #zad8 {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      border: 1px solid #aaa;
+    }
+
+    body {
+      background-color: rgb(197, 154, 197);
+    }
+
+    h1 {
+      color: powderblue;
+    }
+
+    #kwadracik {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: rgb(204, 161, 204);
+      color:white;
+      font-size: 30px;
+    }
+    button {
+      width: 50px;
+      height: 30px;
+    }
+     #zad11 {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      background-color: rgb(153, 145, 192);
+      color: white;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    #czas {
+      font-size: 25px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Zadanie 1</h1>
+  <div id="zad1"></div>
+
+  <h1>Zadanie 2</h1>
+  <div id="zad2"></div>
+
+  <h1>Zadanie 3</h1>
+  <div id="zad3"></div>
+
+  <h1>Zadanie 4</h1>
+  <div id="zad4"></div>
+
+  <h1>Zadanie 5</h1>
+  <div id="zad5"></div>
+
+  <h1>Zadanie 6</h1>
+  <div id="zad6"></div>
+
+  <h1>Zadanie 7</h1>
+  <div id="zad7" style="position: absolute; height: 600px;"></div>
+
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+  <h1>Zadanie 8</h1>
+  <div id="zad8"></div>
+
+  <h1>Zadanie 9</h1>
+  <div id="kwadracik" onmouseover="poz()"></div>
+
+  <h1>Zadanie 10</h1>
+  <div id="zad10"> </div>
+  <button onClick="dodajJeden()"> Resetuj</button>
+
+  <h1>Zadanie 11</h1>
+  <button onClick="startGry()">Zacznij grę</button>
+  <br><br>
+  <div id="czas">0</div>
+  <div id="zad11"></div>
+  
+
+  <script>
+    // Zadanie 1 
+    let imie = "Darcia i Wercia i Sylwek";
+    let nazwisko = "uwuwu";
+    let ile = parseInt(prompt("Podaj ilość powtórzeń", 5));
+
+    for (let i = 1; i <= ile; i++) {
+      document.getElementById("zad1").innerHTML += `<br>${i}. ${imie} ${nazwisko}`;
+    }
+/*
+    // Zadanie 2 
+    let ile1 = parseInt(prompt("Podaj zakres dla liczb parzystych", 100));
+    for (let j = 2; j <= ile1; j += 2) {
+      document.getElementById("zad2").innerHTML += `${j}, `;
+    }
+
+    // Zadanie 3 
+    let od1 = parseFloat(prompt("Podaj pierwszą liczbę"));
+    let od2 = parseFloat(prompt("Podaj drugą liczbę"));
+
+    document.getElementById("zad3").innerHTML += `
+      <br>${od1} + ${od2} = ${od1 + od2}
+      <br>${od1} - ${od2} = ${od1 - od2}
+      <br>${od1} * ${od2} = ${od1 * od2}
+      <br>${od1} / ${od2} = ${od2 !== 0 ? (od1 / od2).toFixed(2) : "nie można dzielić przez 0"}
+    `;
+
+    // Zadanie 4 
+    let a = parseInt(prompt("Podaj liczbę, aby sprawdzić czy jest pierwsza"));
+    let czy_pierwsza = a > 1;
+
+    for (let i = 2; i * i <= a; i++) {
+      if (a % i === 0) {
+        czy_pierwsza = false;
+        break;
+      }
+    }
+
+    if (czy_pierwsza)
+      document.getElementById("zad4").innerHTML = `<h3>${a} jest liczbą pierwszą</h3>`;
+    else
+      document.getElementById("zad4").innerHTML = `<h3>${a} nie jest liczbą pierwszą</h3>`;
+
+    // Zadanie 5 
+    let d = parseFloat(prompt("Podaj pierwszą liczbę do dodania"));
+    let s = parseFloat(prompt("Podaj drugą liczbę do dodania"));
+    let wynik = d + s;
+
+    document.getElementById("zad5").innerHTML = `<h3>${wynik} to wynik dodania tych dwóch liczb</h3>`;
+
+    // Zadanie 6 
+    const container = document.getElementById("zad6");
+
+    for (let i = 1; i <= 50; i++) {
+      const p = document.createElement("p");
+      p.textContent = `rozmiar ${i}px`;
+      p.style.fontSize = `${i}px`;
+
+      const kolorR = Math.floor(Math.random() * 256);
+      const kolorG = Math.floor(Math.random() * 256);
+      const kolorB = Math.floor(Math.random() * 256);
+      p.style.color = `rgb(${kolorR}, ${kolorG}, ${kolorB})`;
+
+      container.appendChild(p);
+    }
+
+    // Zadanie 7 
+    for (let i = 0; i < 20; i++) {
+      const div = document.createElement("div");
+      div.style.width = "20px";
+      div.style.height = "20px";
+      div.style.backgroundColor = "powderblue";
+      div.style.position = "absolute";
+      div.style.left = (i * 30) + "px";
+      div.style.top = (i * 30) + "px";
+      document.getElementById("zad7").appendChild(div);
+    }
+
+    //  Zadanie 8 
+    for (let i = 0; i < 20; i++) {
+      for (let j = 0; j < 20; j++) {
+        const div = document.createElement("div");
+        div.style.width = "20px";
+        div.style.height = "20px";
+        div.style.backgroundColor = "lightblue";
+        div.style.position = "absolute";
+        div.style.left = (j * 25) + "px";  
+        div.style.top = (i * 25) + "px";   
+        document.getElementById("zad8").appendChild(div);
+      }
+    }
+    // zad9
+
+  const div = document.createElement("div");
+  let wys = Math.floor(Math.random() * (screen.height - 1 + 1) ) + 1;
+  let szer = Math.floor(Math.random() * (screen.width - 1 + 1) ) + 1;
+  div.style.width = "50px";
+  div.style.height = "50px";
+  div.style.backgroundColor = "powdergreen";
+  div.style.position = "absolute";
+  document.getElementById("zad9").appendChild(div); 
+  
+
+
+  function poz()
+    {
+      rozH=screen.height;
+      rozH1=window.innerHeight;
+      rozW=screen.width;
+      rozW1=screen.width;
+
+      new_rozH=Math.floor(Math.random()*(rozH1-50)+50);
+      new_rozW=Math.floor(Math.random()*(rozW1-50)+50);
+
+      blok=document.getElementById("kwadracik");
+      blok.style.marginLeft=new_rozW+"px";
+      blok.style.marginTop=new_rozH+"px";
+    }
+      
+    //Zadabnie 10 
+    const mojInter = setInterval(czas, 100)
+    let i = 0;
+    function czas(){
+    i++
+    document.getElementById("zad10").innerHTML = i; 
+    }
+    function dodajJeden(){
+        clearInterval(mojInter);
+        i=0;
+        setInterval(czas, 100)
+    }
+        */
+    // Zadanie 11
+    let moj;       
+    let czasGry;  
+    let i = 0;     
+    let czas = 0;  
+
+    function startGry() {
+      i = 0;
+      czas = 0;
+      document.getElementById("czas").innerHTML = czas;
+      const blok = document.getElementById("zad11");
+      blok.innerHTML = czas.toFixed(1);
+      clearInterval(moj);
+      clearInterval(czasGry);
+      moj = setInterval(gierka, 1000);
+      czasGry = setInterval(liczCzas, 100);
+    }
+
+    function gierka() {
+      const rozH1 = window.innerHeight;
+      const rozW1 = window.innerWidth;
+
+      const new_rozH = Math.floor(Math.random() * (rozH1 - 100));
+      const new_rozW = Math.floor(Math.random() * (rozW1 - 100));
+
+      const blok = document.getElementById("zad11");
+      blok.style.marginLeft = new_rozW + "px";
+      blok.style.marginTop = new_rozH + "px";
+    }
+
+    function liczCzas() {
+      czas++;
+      const blok = document.getElementById("zad11");
+      blok.innerHTML = (czas / 10).toFixed(1); 
+      document.getElementById("czas").innerHTML = (czas / 10).toFixed(1);
+    }
+
+    document.getElementById("zad11").addEventListener("click", () => {
+      i++;
+      if (i === 20) {
+        clearInterval(moj);
+        clearInterval(czasGry);
+        alert("Koniec gry! Twój czas: " + (czas / 10).toFixed(1) + " sekund");
+      }
+    });
+  </script>
+</body>
+</html>
+
+

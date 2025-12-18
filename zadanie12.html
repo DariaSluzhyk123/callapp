@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Złap żółty kwadrat</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    background-color: #7a5959;
+  }
+  #info {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .square {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  .yellow {
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  .blue {
+    background-color: dodgerblue;
+  }
+</style>
+</head>
+<body>
+
+<div id="info">
+  Punkty: <span id="score">0</span> |
+  Czas gry: <span id="time">30</span>s
+</div>
+
+<div id="game"></div>
+
+<script>
+  const game = document.getElementById("game");
+  const scoreEl = document.getElementById("score");
+  const timeEl = document.getElementById("time");
+
+  let score = 0;
+  let gameTime = 30;
+  let yellowTimer = 20;
+  let yellowInterval;
+  let gameInterval;
+  let yellowSquare, blueSquares = [];
+
+  function randomPosition() {
+    const x = Math.random() * (window.innerWidth - 70);
+    const y = Math.random() * (window.innerHeight - 100);
+    return { x, y };
+  }
+
+  function createSquares() {
+    game.innerHTML = "";
+    const posYellow = randomPosition();
+    yellowSquare = document.createElement("div");
+    yellowSquare.classList.add("square", "yellow");
+    yellowSquare.style.left = posYellow.x + "px";
+    yellowSquare.style.top = posYellow.y + "px";
+    yellowSquare.textContent = yellowTimer;
+    game.appendChild(yellowSquare);
+
+    yellowSquare.addEventListener("click", () => {
+      score += yellowTimer;
+      scoreEl.textContent = score;
+      newRound();
+    });
+
+    blueSquares = [];
+    for (let i = 0; i < 4; i++) {
+      const posBlue = randomPosition();
+      const blue = document.createElement("div");
+      blue.classList.add("square", "blue");
+      blue.style.left = posBlue.x + "px";
+      blue.style.top = posBlue.y + "px";
+      blue.addEventListener("click", () => {
+        score -= 5;
+        scoreEl.textContent = score;
+        newRound();
+      });
+      game.appendChild(blue);
+      blueSquares.push(blue);
+    }
+
+    yellowInterval = setInterval(() => {
+      yellowTimer--;
+      yellowSquare.textContent = yellowTimer;
+      if (yellowTimer <= 0) {
+        newRound();
+      }
+    }, 1000);
+  }
+
+  function newRound() {
+    clearInterval(yellowInterval);
+    yellowTimer = 20;
+    createSquares();
+  }
+
+  function startGame() {
+    createSquares();
+    gameInterval = setInterval(() => {
+      gameTime--;
+      timeEl.textContent = gameTime;
+      if (gameTime <= 0) {
+        clearInterval(gameInterval);
+        clearInterval(yellowInterval);
+        game.innerHTML = "";
+        alert("Koniec gry! Twój wynik: " + score);
+      }
+    }, 1000);
+  }
+
+  window.addEventListener("click", function startOnce() {
+    window.removeEventListener("click", startOnce);
+    startGame();
+  });
+</script>
+
+</body>
+</html>

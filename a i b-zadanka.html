@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="Pl-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanko z javki</title>
+</head>
+<body>
+        <div id ="wynik"></div>
+<script>
+      let a=parseInt(prompt("Podaj liczbe a "));
+      let b=parseInt(prompt("Podaj liczbe b "));
+      if (!(a<=b)){
+        let tmp = a;
+        a =b;
+        b = tmp;
+      }
+      while ( a<=b) {
+        document.write( a=", ");
+        console.log(a=", ");
+        document.getElementById("wynik").innerHTML +=a+", ";
+        a++;
+      }
+</script>
+</body>
+</html>
+const container = document.getElementById("zad6");
+
+      for (let i = 1; i <= 50; i++) {
+
+        const p = document.createElement("p");
+        const node = document.createTextNode("rozmiar " + i + "px");
+        p.appendChild(node);
+        p.style.fontSize = `${i}px`;
+        container.appendChild(p);
+        kolorR=Math.floor(Math.random()*256);
+        kolorG=Math.floor(Math.random()*256);
+        kolorB=Math.floor(Math.random()*256); 
+        p.style.color = `rgb(${kolorR}, ${kolorG}, ${kolorB})`;
+
+        document.getElementById("zad6").appendChild(p);

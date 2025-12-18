@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liczby i checkboxy</title>
+    <script src="liczby.js" defer></script>
+</head>
+<body>
+    <h2>Podaj liczbę w pierwszym oknie</h2>
+    <input type="text" id="liczba" onchange="myFunkcja()">
+    <input type="text" id="liczby" onclick="myFunkcja()">
+    <p id="demo"></p>
+    <div style="margin: 100px auto;width:50%">
+    <input type="checkbox" id="l1" value="1" onchange="oblicz2()">1<br>
+    <input type="checkbox" id="l2" value="2" onchange="oblicz2()">2<br>
+    <input type="checkbox" id="l3" value="4" onchange="oblicz2()">4<br>
+    <input type="checkbox" id="l4" value="8" onchange="oblicz2()">8<br>
+
+    <label>Suma</label>
+    <input type="text" id="suma">
+<br>
+    <input type="radio" id="d1" name="plec" value="kobieta">Kobieta <br>
+    <input type="radio" id="d2" name="plec" value="mężczyzna">Mężczyzna <br>
+    <p id="ple"></p>
+    <br>
+    <select id="opcja" onchange="pobierz()">
+        <option value="white">Weib</option>
+        <option value="#CAC8D4">Silber</option>
+        <option value="#2A1E5B">Anthrazit</option>
+        <option value="#695249">Braun</option>
+    </select>
+    </div>
+    <div>
+        <input type="text" id="imie">
+        <p>Twoje ulubione owoce</p>
+        <select id="owoce" onchange="owocki()" multiple>
+            <option value="kiwi">Kiwi</option>
+            <option value="truskawki">truskawki</option>
+            <option value="banany">banany</option>
+            <option value="jablko">jablko</option>
+            <option value="gruszka">gruszka</option>
+            <option value="mandarynka">mandarynka</option>
+            <option value="wisnie">wisnie</option>
+        </select>
+        <p>Kliknij w guzik aby wyszło</p>
+        <button type ="button" onclick="owocki()">Kliknij mnie</button>
+        <p id="dem"></p>
+    </div>
+</body>
+</html>

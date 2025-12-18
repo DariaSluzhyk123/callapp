@@ -1,0 +1,85 @@
+!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Aplikacja losowania </title>
+</head>
+
+<body>
+    <body style="background-color: rgb(238, 224, 226)">
+    <button onclick="losuj()"><span style ="color: rgb(67, 3, 243); font-family: Georgia, 'Times New Roman', Times, serif">Losuj cytat</span></button>
+<div id="cytat"></div>
+<input id="nowy" placeholder="Cytat - Autor">
+<button onclick="dodaj()"><span style ="color: rgb(199, 11, 42)">Dodaj cytat</span></button>
+<p>
+<span style="font-family: 'Times New Roman', Times, serif; font-size: xx-large; color: rgb(31, 0, 167)">Cytatów:</span>
+<span id="licznik"></span>
+</p>
+<br>
+<br>
+<br>
+<script>
+cytaty = [
+"Nie bój się porażki - Konfucjusz",
+"Ucz się jakbyś miał żyć wiecznie - Gandhi",
+"Myśl pozytywnie - Anonim",
+"Codziennie nowa szansa - Einstein",
+"Próbuj aż się uda - Edison"
+];
+
+const cytatDiv = document.getElementById("cytat");
+const licznik = document.getElementById("licznik");
+const input = document.getElementById("nowy");
+
+function aktualizujLicznik() {
+licznik.textContent = cytaty.length;
+}
+
+function losuj() {
+const los = cytaty[Math.floor(Math.random() * cytaty.length)];
+cytatDiv.textContent = los;
+document.body.style.background = "#" + Math.floor(Math.random()*16777215).toString(16);
+}
+
+function dodaj() {
+if (input.value) cytaty.push(input.value);
+input.value = "";
+aktualizujLicznik();
+}
+
+aktualizujLicznik();
+</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efekt powiększenia tekstu</title>
+  <style>
+    .tekst {
+      font-size: 16px;
+      transition: font-size 0.3s ease; /* Płynne przejście */
+    }
+  </style>
+</head>
+<body>
+  <p class="tekst" id="tekst">Najedź na ten tekst, aby go powiększyć!</p>
+
+  <script>
+    const tekst = document.getElementById('tekst');
+
+    tekst.addEventListener('mouseover', () => {
+      tekst.style.fontSize = '24px'; // Powiększenie tekstu
+    });
+
+    tekst.addEventListener('mouseout', () => {
+      tekst.style.fontSize = '16px'; // Powrót do pierwotnego rozmiaru
+    });
+  </script>
+</body>
+</html>

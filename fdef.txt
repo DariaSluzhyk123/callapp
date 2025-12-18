@@ -1,0 +1,9 @@
+let b = 10      
+      while( a <= b){
+        console.log(a)
+      a++;
+      }
+
+ alert("podałaś "+a+" oraz "+b");
+      if (confirm("czy zgadzasz się na algorytm?"))
+      {}
