@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep</title>
+    <link rel="stylesheet" href ="kosz.css">
+    <script src="koszyczek.js" defer></script> 
+</head>
+<body>
+    <h1>Sklep-Koszyk</h1>
+    <center>
+    <div class="form">
+        <h3>Nazwa Produktu: </h2>
+            <input type="text" id="nazwa">
+        <h3>Cena za kg: </h3>
+        <input type="number" id="cena">
+        <h3>Ilośc (kg): </h3>
+        <input type="number" id="ilosc">
+        <br>
+        <button onclick="addToCart()">Dodaj do koszyka</button>
+    </div>
+    </center>
+    <div>
+        <table>
+            <tr>
+        <th>Produkt</th> <th>Cena/kg</th><th>Ilość</th><th>Wartość</th><th>Usuń</th>
+        </tr>
+        <tbody></tbody>
+        </table>
+    </div>
+    <div id="netto">Suma Netto: </div>
+    <div id="bruto">Suma Brutto (VAT23%): </div>
+</body>
+</html>

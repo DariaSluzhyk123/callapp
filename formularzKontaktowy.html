@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div id="kontener">
+        <h1>Forlumarz Kontaktowy</h1>
+        <br>
+        <p>Imie</p>
+        <input stype="text" id="imie" required><span id="err1"></span>
+        <br>
+        <p>Nazwisko</p>
+        <input stype="text" id="nazwisko" required><span id="err2"></span>
+        <br>
+        <p>Kod Pocztowy</p>
+        <input stype="text" id="kodpocz" required><span id="err3"></span>
+        <br>
+        <p>Email</p>
+        <input stype="email" id="email" required><span id="err4"></span>
+        <br>
+        <p>Strona WWW</p>
+        <input stype="url" id="stronaWWW"><span id="err5"></span>
+        <br>
+        <button type="button" onclick="przeslij()">Prześlij</button>
+        <button type="button" onclick="usun()">Resetuj</button>
+    </center>
+    </div>
+    <script>
+        function przeslij(){
+
+            if (document.getElementById("imie").value!='')
+        {
+            regImie=/[A-Z][a-z]+/;
+            tekst = document.getElementById("imie").value;
+            if (!regImie.test(tekst)) document.getElementById("err1").innerHTML="Podaj poprawne imie";
+            else document.getElementById("err1").innerHTML="";
+        } 
+        else document.getElementById("err1").innerHTML="Podaj poprawne imie";
+
+        if (document.getElementById("nazwisko").value!='')
+        {
+            regImie=/[A-Z][a-z]+/;
+            tekst = document.getElementById("nazwisko").value;
+            if (!regImie.test(tekst)) document.getElementById("err2").innerHTML="Podaj poprawne nazwisko!";
+            else document.getElementById("err2").innerHTML="";
+        }
+        else document.getElementById("err2").innerHTML="Podaj poprawne nazwisko";
+
+        if (document.getElementById("kodpocz").value!='')
+        {
+            regKod=/[0-9]{2}-[0-9]{3}/;
+            tekst = document.getElementById("kodpocz").value;
+            if (!regImie.test(tekst)) document.getElementById("err3").innerHTML="Podaj poprawne kod pocztowy!";
+            else document.getElementById("err3").innerHTML="";
+        }
+        else document.getElementById("err3").innerHTML="Podaj poprawne kod pocztowy!";
+
+        if (document.getElementById("email").value!='')
+        {
+            regMail=/[a-zA-Z0-9-._]{3,} @ [a-zA-Z0-9_]{4,} \.[a-zA-Z]{2,4}/;
+            tekst = document.getElementById("email").value;
+            if (!regImie.test(tekst)) document.getElementById("err4").innerHTML="Podaj poprawny email!";
+            else document.getElementById("err4").innerHTML="";
+        }
+        else document.getElementById("err4").innerHTML="Podaj poprawny email!";
+
+        if (document.getElementById("stronaWWW").value!='')
+        {
+            regWWW=/^((https?:\/\/) | (www\.))\S*$/;
+            tekst = document.getElementById("stronaWWW").value;
+            if (!regImie.test(tekst)) document.getElementById("err5").innerHTML="Podaj poprawny link";
+            else document.getElementById("err5").innerHTML="";
+        }
+        else document.getElementById("err5").innerHTML="Podaj poprawny link";
+        }
+    </script>
+</body>
+</html>
