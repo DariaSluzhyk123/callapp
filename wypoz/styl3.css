@@ -1,0 +1,38 @@
+*{
+    font-family: Verdana;
+}
+#left{
+    background-color: #29434E;
+    color: white;
+    text-align: center;
+    width: 70%;
+    height: 70px;
+    float: left;
+}
+#right{
+    background-color: #29434E;
+    color: white;
+    width: 30%;
+    height: 70px;
+    float: left;
+}
+.polecane{
+    overflow: scroll;
+    background-color: #B0BEC5;
+    height: 320px;
+clear: both;
+color: white;
+}
+.fantastyczne{
+    overflow: scroll;
+    background-color: #B0BEC5;
+    height: 320px;
+clear: both;
+}
+h3{
+    background-color: #546E7A;
+}
+footer{
+    background-color:#29434E;
+    color: white;
+}
