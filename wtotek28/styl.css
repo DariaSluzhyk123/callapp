@@ -1,0 +1,51 @@
+*{
+    font-family: cursive, sans-serif;
+}
+body{
+    background-color: #4682b4;
+}
+header, footer{
+    background-color: #0f0f64;
+    text-align: center;
+    color: white;
+    padding: 3px;
+    clear: both;
+}
+.boczny{
+    width: 20%;
+    height: 500px;
+    float: left;
+}
+.blok1, .blok2{
+    width: 80%;
+    height: 250px;
+    overflow-y: scroll;
+    float: left;
+}
+img{
+    width: 150px;
+    padding: 2px;
+    display: flex;
+}
+h4{
+    text-align: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    background-color: #12538A;
+}
+
+.blok2 div{
+    background-color: #2b6ba0;
+    color: white;
+    height: 150px;
+    width: 150px;
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+}
