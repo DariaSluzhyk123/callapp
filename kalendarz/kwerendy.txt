@@ -1,0 +1,7 @@
+1.SELECT data FROM `imieniny` WHERE imiona like "Karol";
+
+2.SELECT imiona FROM `imieniny` WHERE data = "05-04";
+
+3.SELECT COUNT(data) FROM imieniny WHERE imiona like "%Mir%";
+
+4. ALTER TABLE imieniny ADD zyczenia text(500);
