@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+import java.util.List;
+import static java.lang.Math.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        List<ElectronicDevice> devices = new ArrayList<>;
+
+        devices.add(new ( ""));
+        devices.add(new (""));
+        devices.add(new (""));
+        devices.add(new (""));
+        devices.add(new (""));
+
+        System.out.println("=== turnOn() ===");
+        for (ElectronicDevice device : devices) {
+            device.turnOn();
+        }
+        System
+
+
+
+    }
+}
+
+public class Figura {
+    protected String color;
+
+    public Figura(String color) {
+        this.color = color;
+    }
+
+    public abstract double obliczPole();
+    public abstract double obliczObwod();
+
+    public void opisz() {
+        System.out.println("Figura: " + getClass().getSimpleName());
+        System.out.println("Color: " + color);
+        System.out.format("Pole: %.2f\n ", obliczPole());
+        System.out.format("Obwod: %.2f\n ", obliczObwod());
+        System.out.println("--------------------------");
+    }
+}
+
+public class Kolo extends Figura{
+    private double promien;
+
+    public Kolo(String color, double promien){
+        super(color);
+        this.promien = promien;
+    }
+
+    @Override
+    public double obliczPole() {
+        return Math.PI * Math.pow(promien, 2);
+    }
+
+    @Override
+    public double obliczObwod() {
+        return 2 * Math.PI * promien;
+    }
+}
+
+public class Prostokat extends Figura{
+    private double szerokosc;
+    private double wysokosc;
+
+    public Prostokat(String color, double szerokosc, double wysokosc){
+        super(color);
+        this.szerokosc = szerokosc;
+        this.wysokosc = wysokosc;
+    }
+
+    @Override
+    public double obliczPole() {
+        return szerokosc * wysokosc;
+    }
+
+    @Override
+    public double obliczObwod() {
+        return 2 * (szerokosc + wysokosc);
+    }
+}
+
+public class Trojkat extends Figura{
+    private double a, b, c;
+
+    public Trojkat(String color, double a, double b, double c){
+        super(color);
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    @Override
+    public double obliczPole() {
+        double s = (a + b + c) / 2;
+        return Math.sqrt(s *(s - a) * (s - b) * (s - c));
+    }
+
+    @Override
+    public double obliczObwod() {
+        return a + b + c;
+    }
+}
+
+
