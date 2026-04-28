@@ -1,0 +1,7 @@
+SELECT `nazwa`,`szerokosc`,`dlugosc` FROM `smok` WHERE `pochodzenie` LIKE "Polska";
+
+SELECT DISTINCT pochodzenie FROM `smok` ORDER by pochodzenie ASC;
+
+SELECT rok, avg(dlugosc) as 'srednia dlugosc' FROM `parada` INNER JOIN udzial on parada.id = udzial.id_parada inner JOIN smok on udzial.id_smok = smok.id where rok > 2005 GROUP BY rok;
+
+ALTER TABLE parada add column lokalizacja Varchar(100);

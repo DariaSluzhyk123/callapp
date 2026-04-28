@@ -1,0 +1,46 @@
+body{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header, footer{
+    background-color: tomato;
+    color: mistyrose;
+    padding: 10px;
+}
+
+nav{
+    width: 20%;
+    float: left;
+}
+
+#blok1, #blok2, #blok3{
+    height: 170px;
+    font-size: 200%;
+    float: left;
+}
+
+#blok1{
+    background-color: mistyrose;
+}
+
+#blok2, #blok3{
+    background-color: #ffaea5;
+}
+
+#main{
+    width: 80%;
+    height: 510px;
+    float: left;
+}
+
+table th{
+    margin: 20px auto;
+    width: 60%;
+    border-style: dashed;
+    float: left;
+}
+dt{
+    font-style: italic;
+    font-size: x-large ;
+}
