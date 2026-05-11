@@ -1,0 +1,4 @@
+1. SELECT COUNT(`Imie`) FROM `klienci`;
+2.SELECT imie, Nazwisko, kod_koloru, pojemnosc, data_odbioru FROM `klienci` INNER JOIN zamowienia ON klienci.Id = zamowienia.id ORDER BY data_odbioru ASC;
+3.SELECT Nazwisko, Imie, kod_koloru, pojemnosc, data_odbioru FROM `klienci` INNER JOIN zamowienia ON klienci.Id = zamowienia.id_klienta WHERE data_odbioru > "2021-11-05" and data_odbioru < "2021-11-07" GROUP by data_odbioru ASC;
+4.SELECT `Imie`, `Nazwisko` FROM `klienci` WHERE `Plec` LIKE "k";

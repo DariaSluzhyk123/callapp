@@ -1,0 +1,26 @@
+body {
+    font-family: Georgia;
+    text-align: center;
+    background-color: lightblue;
+}
+.formularz{
+    padding-top: 20px ;
+}
+.glowny{
+    padding: 30px;
+    height: 400px;
+    float: left;
+}
+footer{
+    clear: both;
+    padding: 10px;
+    background-color: orange;
+}
+.img{
+    width: 80%;;
+}
+table{
+    width: 70%;
+    padding: auto;
+    
+}
