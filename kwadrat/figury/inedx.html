@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pola figur</title>
+     <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Pola figur płaskich</h2>
+    </header>
+    <section class="glowny">
+        <nav>
+            <h3>MENU</h3>
+            <ul>
+                <li>Prostokąt i trójkąt<a href="inedx.html"></a></li>
+                <li>Okrąg i koło<a href="kolo.html"></a></li>
+            </ul>
+        </nav>
+        <section class="sekcja">
+            <img src="1d.bmp" alt="Figura" id="figura">
+            <br>
+            <img src="1m.bmp" alt="Wybierz trójkąt"  id="m1" class="duzy" >
+            <img src="2m.bmp" alt="Wybierz prostokąt" id="m2" class="duzy">
+            <script>
+                document.getElementById("m1").onclick = function() {
+                document.getElementById("figura").src = "1d.bmp";
+                }
+                document.getElementById("m2").onclick = function() {
+                document.getElementById("figura").src = "2d.bmp";
+                }
+            </script>
+        </section>
+        <section class="boczny">
+            <h3>Pole prostokąta/pole trójkąta</h3>
+            <label title="bokok" >Bok prostokąta/pole trójkąta:</label><input type="">
+            <br><br>
+            <label title="">Drugi bok prostokąta/podstawa trójkąta:</label><input type="">
+            <br>
+            <input type="submit" value="Oblicz">
+            <script>
+
+            </script>    
+        </section>
+    </section>
+    <footer>
+        <p>Autor: Dariia Sluzhynska</p>
+    </footer>
+</body>
+</html>
