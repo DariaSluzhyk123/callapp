@@ -1,0 +1,4 @@
+1.SELECT nazwa FROM `choroby` WHERE zakazna ='T' GROUP BY(nazwa);
+2.SELECT id, nazwa FROM `choroby`;
+3.SELECT objawy.nazwa FROM `objawy` JOIN choroby ON objawy.nazwa = choroby.nazwa WHERE objawy.id = 5;
+4.SELECT c.nazwa, COUNT(co.id_objawy) AS liczba_objawow FROM choroby c JOIN choroby_objawy co ON c.id = co.id_choroby WHERE c.zakazna = 'T' GROUP BY c.id, c.nazwa;
