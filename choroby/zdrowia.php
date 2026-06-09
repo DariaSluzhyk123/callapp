@@ -39,23 +39,23 @@ $conn = mysqli_connect("localhost", "root", "", "choroby");
                 $zapytanie2 = "SELECT id, nazwa FROM `choroby`;";
                 $wynik2 = mysqli_query($conn, $zapytanie2);
                     while($row = mysqli_fetch_row($wynik2)){
-                        echo "<option>". $row['1'] ."</option>";
+                        echo "<option value='".$row['0']."'>". $row['1'] ."</option>";
                     }
             ?>
             </select>
-            <input type="submit" value="sprawdź">
+            <input type="submit"  name = "bakteria" value="sprawdź">
             </form>
             <div id="skrypt3">
                 <?php
-                    if(isset($_POST["choroba"])){
-                        $id = $_POST["choroba"];
-                    }
-                    $zapytanie3 = "SELECT objawy.nazwa FROM `objawy` JOIN choroby ON objawy.nazwa = choroby.nazwa WHERE objawy.id = $id;";
+                    if(isset($_POST["bakteria"])){
+                    $id = $_POST["choroba"];
+                    
+                    $zapytanie3 = "SELECT nazwa FROM objawy JOIN choroby_objawy ON objawy.id= choroby_objawy.id_objawy WHERE choroby_objawy.id_choroby = $id;";
                     $wynik3 = mysqli_query($conn, $zapytanie3);
                     while($row = mysqli_fetch_row($wynik3)){
-                        echo "<span>". $row['objaw'] ."</span>";
+                        echo "<span>". $row['0'] ."</span>";
                     }
-
+                    }
                 ?>
             </div>
         </section>
@@ -71,3 +71,4 @@ $conn->close();
 ?>
 </body>
 </html>
+          
