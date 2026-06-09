@@ -1,1 +1,57 @@
 Od 31 lat oferujemy najwyższej jakości pieczywo. Naturalnie świeże, naturalnie smaczne. Pieczemy wyłącznie wypieki na naturalnym zakwasie bez polepszaczy i zagęstników. Korzystamy wyłącznie z najlepszych ziaren pochodzących z ekologicznych upraw położonych w rejonach zgierskim i ozorkowskim.
+- Obraz wypieki. png z tekstem alternatywnym o treści: „Produkty naszej piekarni" umieszczony jest na
+tylnym planie strony. Bloki strony zakrywają obraz
+- Podzial strony na bloki: nawigacyjny, naglówkowy, główny, stopki. Podzial zrealizowany za pomoca semantycznych znaczników sekcji jezyka HTML5 tak, aby po uruchomieniu w przegladarce wyglad ukladu bloków był zgodny z ilustracją 2
+- Zawartość bloku nawigacyjnego:
+- Cztery odnośniki o treści: KWERENDA1, KWERENDA2, KWERENDA3, KWERENDA4.
+Odnośniki prowadzą do kolejnych zrzutów ekranu z kwerendami
+- Zawartość bloku naglówkowego:
+- Nagłówek pierwszego stopnia o treści: „WITAMY"
+- Naglówek czwartego stopnia o treści: NA STRONIE PIEKARNI"
+- Paragraf (akapit) zawierający tekst. Tekst można skopiować z pliku teksty.txt z wypakowanego archiwum
+- Zawartość bloku glównego:
+- Naglówek czwartego stopnia o treści: „Wybierz rodzaj wypieków:"
+- Formularz wysyłający dane metodą bezpieczną do tego samego pliku. Pola formularza:
+- Lista rozwijana wypelniona przez skrypt 1
+- Przycisk „Wybierz" wysyłający dane do skryptu 2 z formularza
+- Tabela o czterech kolumnach zawierająca:
+- Wiersz z komórkami nagłówkowymi: Rodzaj, Nazwa, Gramatura,
+Cena
+- Wiersze z danymi wypelnione skryptem 2
+- Zawartość stopki:
+- Paragraf „AUTOR", dalej wstawiony numer zdającego
+- Paragraf „Data: ", dalej wpisana data egzaminu
+Styl CSS witryny internetowej
+Styl CSS zdefiniowany jest w calości w zewnętrznym pliku o nazwie styles.css. W tabeli 2 zawarto pomoc do niektórych właściwości CSS. Cechy formatowania CSS, działające na stronie:
+- Domyśine formatowanie wszystkich selektorów: kröj czcionki Verdana
+- Dia ciala strony: tło jako gradient liniowy pionowy od koloru Teal do AliceBlue, biały kolor czcionki,
+wyrównanie tekstu do środka, jedynie marginesy zewnętrzne lewy i prawy 20 px
+- Dla obrazu: szerokość 100%, blokowy sposób wyświetlania, stale położenie na stronie z odstępem od góry 70 px. Obraz jest zawsze pod spodem tresci strony
+- Dla odnośnika: rozmiar czcionki 130%, marginesy wewnętrzne 30 px, biały kolor czcionki
+- Dia bloku nagłówkowego: kolor tła RGB
+160, 82, 45 z przezroczystością 0.6, marginesy
+wewnetrzne
+10 px, jedynie margines zewnętrzny górny 100 px, jedynie górne rogi zaokrąglone o 15 px
+- Dla bloku głównego: kolor tła SandyBrown, marginesy wewnetrzne 30 px
+- Dla bloku stopki: kolor tła Sienna, marginesy wewnętrzne 30 px, jedynie dolne rogi zaokrąglone o 15 px
+- Dia selektora nagłówka pierwszego stopnia: zewnętrzny cień tekstu przesunięty w poziomie i
+pionie o 2 px, promień rozmycia 5 px, kolor cienia czarny
+- Dia selektora tabeli: marginesy zewnętrzne automatycznie wyliczane przez przeglądarkę,
+szerokość 70%, kolor tła Sienna
+Wspólne dia selektora tabeli i komórek tabeli: obramowanie linią ciągłą o grubości 1 px i kolorze
+SandyBrown, obramowanie polączone
+Uwaga: styl CSS nagłówka pierwszego stopnia i tabeli należy zdefiniować wyłącznie przy pomocy selektora
+tego znacznika. Jest to uwarunkowane projektem późniejszej rozbudowy witryny.
+Skrypty polączenia z bazą
+W tabeli 1 zamieszczono wybrane funkcje PHP do obsługi bazy danych. Wymagania dotyczące skryptów:
+- Napisane w języku PHP
+- Należy stosować znaczące nazewnictwo zmiennych i funkcji w języku polskim lub angielskim
+- Łączą się z serwerem bazodanowym na localhost, użytkownik root bez hasła, baza danych o nazwie piekamia
+- Skrypt 1
+- Wysyła do bazy danych zapytanie 2
+- Dane zwrócone zapytaniem wyświetla w kolejnych elementach listy rozwijanej
+- Skrypt 2
+- Wysyła do bazy danych zapytanie 1 zmodyfikowane w ten sposób, że wartość pola Rodzaj w warunku jest pobrana z formularza
+- Zwrócone zapytaniem wiersze wyświetla w kolejnych wierszach tabeli, w przeznaczonych do tego komórkach
+- W stanie początkowym, gdy nie wybrano opcji listy rozwijanej, w tabeli nie są wyświetlane wiersze z danymi
+- Na końcu jest zamykane polączenie z serwerem.
